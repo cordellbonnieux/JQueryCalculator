@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #inner {
+            max-width: 100vw;
+        }
+
+        ul {
+            max-width: 100%;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 5vw 5vw 5vw 5vw;
+        }
+
+        ul li button{
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="inner">
+            <div id="display">
+                <input type="text"></input>
+            </div>
+            <div id="keys">
+                <ul>
+                    <li><button>7</button></li>
+                    <li><button>8</button></li>
+                    <li><button>9</button></li>
+                    <li><button>+</button></li>
+                    <li><button>4</button></li>
+                    <li><button>5</button></li>
+                    <li><button>6</button></li>
+                    <li><button>-</button></li>
+                    <li><button>1</button></li>
+                    <li><button>2</button></li>
+                    <li><button>3</button></li>
+                    <li><button>*</button></li>
+                    <li><button>Clear</button></li>
+                    <li><button>/</button></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script>
+        $(document).ready(function() {
+
+        })
+    </script>
+</body>
+</html>
