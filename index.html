@@ -158,15 +158,15 @@
                     // get the last input character
                     l = l.charAt((l.length-1))
                     // ensure that we are not using two operators back to back
-                    let ops = {c: false, l: false}
+                    let op = {c: false, l: false}
                     if (c === '+' || c === '-' || c === '/' || c === '*') {
-                        ops.c = true
+                        op.c = true
                     }
                     if (l === '+' || l === '-' || l === '/' || l === '*') {
-                        ops.l = true
+                        op.l = true
                     }
                     // print to display if allowed
-                    if (ops.c && ops.l) {
+                    if ((op.c && op.l) || (op.c && l.length == 0)) {
                         return
                     } else {
                         $('input[type=text]').val($('input[type=text]').val() + c)
