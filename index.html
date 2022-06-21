@@ -20,6 +20,11 @@
         ul li button{
             width: 100%; 
         }
+
+        ul li:nth-child(13) {
+            grid-column-start:1;
+            grid-column-end: 3;
+        }
     </style>
 </head>
 <body>
@@ -42,6 +47,7 @@
                     <li><button>2</button></li>
                     <li><button>3</button></li>
                     <li><button>*</button></li>
+                    <li><button>=</button></li>
                     <li><button>Clear</button></li>
                     <li><button>/</button></li>
                 </ul>
@@ -50,7 +56,32 @@
     </main>
     <script>
         $(document).ready(function() {
+            $('button').on('click', function(e) {
+                const c = e.target.innerHTML
+                if (c === 'Clear') {
+                    $('input[type=text]').val('')
+                } else if (c === '=') {
 
+                } else {
+                    // get the last input character
+                    let l = $('input[type=text]').val()
+                    l = l.charAt((l.length-1))
+                    // ensure that we are not using two operators back to back
+                    let ops = {c: false, l: false}
+                    if (c === '+' || c === '-' || c === '/' || c === '*') {
+                        ops.c = true
+                    }
+                    if (l === '+' || l === '-' || l === '/' || l === '*') {
+                        ops.l = true
+                    }
+                    // print to display if allowed
+                    if (ops.c && ops.l) {
+                        return
+                    } else {
+                        $('input[type=text]').val($('input[type=text]').val() + c)
+                    }
+                }
+            })
         })
     </script>
 </body>
