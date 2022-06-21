@@ -56,6 +56,7 @@
     </main>
     <script>
         $(document).ready(function() {
+            // Calculator Buttons
             $('button').on('click', function(e) {
                 const c = e.target.innerHTML
                 if (c === 'Clear') {
@@ -80,6 +81,13 @@
                     } else {
                         $('input[type=text]').val($('input[type=text]').val() + c)
                     }
+                }
+            })
+            // Entering data right into the input field
+            $('input[type=text]').on('keypress', function(e) {
+                let keys = [42,43,45,47,48,49,50,51,52,53,54,55,56,57]
+                if (!keys.includes(e.which)) {
+                    e.preventDefault()
                 }
             })
         })
