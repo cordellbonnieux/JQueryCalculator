@@ -6,28 +6,54 @@
     <title>Calculator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+        body {
+            background-color: lightgray;
+        }
+
         #inner {
-            max-width: 100vw;
+            max-width: 200px;
+            margin: 5vw auto;
+            background-color: gray;
+            padding: 10px 10px 45px 10px;
+            border: 5px solid #fff;
+        }
+
+        input[type=text] {
+            width: 96%;
+            margin: 0;
+            height: 25%;
+            font-size: 2em;
+            border: 1px solid #000;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
         }
 
         ul {
-            max-width: 100%;
             padding: 0;
             list-style: none;
             display: grid;
-            grid-template-columns: 5vw 5vw 5vw 5vw;
-            grid-template-rows: 5vw 5vw 5vw 5vw;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-template-rows: 25% 25% 25% 25%;
+            column-gap: 5px;
+            row-gap: 5px;
+            margin-right: 15px;
+            margin-top: 10px;
         }
 
         ul li button{
             width: 100%; 
             height: 100%;
+            border: 1px solid #000;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            color: #000;
+            background-color: #fff;
         }
 
         ul li:last-child {
-            grid-column-start:1;
+            grid-column-start:3;
             grid-column-end: 5;
-            height: 5vw;
+            height: 150%;
         }
     </style>
 </head>
